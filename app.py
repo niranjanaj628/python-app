@@ -17,6 +17,12 @@ def get_data():
     ]
     return jsonify(data)
 
+# docker route
+@app.route('/docker',methods=['GET'])
+def docker():
+    message='Docker is running!'
+    return message
+
 # Kubernetes route (something playful)
 @app.route('/k8s', methods=['GET'])
 def kubernetes_playful():

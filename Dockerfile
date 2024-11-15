@@ -1,18 +1,11 @@
-# Base image
-FROM python:3.9-slim-buster
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the requirements file and install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the Flask app code into the container
-COPY app.py .
-
-# Expose the port on which the Flask app will run
-EXPOSE 5000
-
-# Set the entry point command to run the Flask app
-CMD ["python", "app.py"]
+#FROM alpine:latest
+#RUN apk add nginx
+#COPY index.html /usr/local/var/www/
+#use official nginx base image 
+FROM nginx:latest
+#copy html file to to the nginx directory 
+COPY index.html /usr/share/nginx/html/
+#expose port 80
+EXPOSE 80
+#the cmd line (4th line) is not executed
+#CMD ["nginx","-g","daemon off;"]
