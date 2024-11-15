@@ -24,7 +24,7 @@ def docker():
     return message
 
 # Kubernetes route (something playful)
-@app.route('/k8s', methods=['GET'])
+@app.route('/new', methods=['GET'])
 def kubernetes_playful():
     message = 'Welcome to the world of Docker!'
     return message
